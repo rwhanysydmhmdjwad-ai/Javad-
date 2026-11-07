@@ -1,41 +1,33 @@
 # CS Knowledge Atlas
 
-A self-contained, client-side knowledge map for computer science. It uses plain HTML, CSS, and vanilla JavaScript; there is no backend, account system, Face ID, passkey, build step, or Node.js runtime.
+A dependency-free, static interactive atlas connecting computer-science foundations, constraints, abstract goals, and real-world achievements. The interface uses a dark, iOS-inspired frosted-glass treatment and adapts from desktop to mobile.
 
-## Included files
+## Contents
 
-- `index.html` — application shell and four-tier layout.
-- `styles.css` — responsive dark glass UI, motion, and reduced-motion support.
-- `app.js` — search, domain filters, relationship highlighting, SVG paths, matrix, and drag interaction.
-- `data.json` — supplied editorial dataset (8 domains, 4 tiers, 84 nodes, mappings, and ordinal influence scores).
-- `manifest.json` — optional installable-app metadata.
+- `index.html` — semantic page structure, search, four-tier building, impact drop target, and bubble matrix.
+- `styles.css` — responsive glass UI, tier accents, selection/drop states, and animated influence bubbles.
+- `app.js` — asynchronous data loading and validation, built-in empty fallback, rendering, search, keyboard access, drag-and-drop and touch-pointer gestures, scoring, and reset/close behavior.
+- `data.json` — 8 domains and 84 concepts (34 Tier 1, 18 Tier 2, 17 Tier 3, 15 Tier 4), including influence scores and goal mappings.
+- `manifest.json` — installable-web-app metadata.
 
 ## Run locally
 
-Open `index.html` from a static web server so the browser can fetch `data.json` (for example, use your editor's Live Server extension). No compilation or package installation is needed. Google Fonts are an optional external enhancement; system fonts remain available offline.
+Browsers restrict `fetch()` from `file://`, so do not open `index.html` directly. From this directory run either:
 
-## Deploy to Netlify
+```sh
+python3 -m http.server 8000
+```
 
-### Drag and drop
-1. Keep the project files together in the `cs-knowledge-atlas-static` folder.
-2. In Netlify, open **Add new site → Deploy manually** (or the deploy drop zone).
-3. Drag the project folder, or a ZIP containing its files, into the drop zone. Ensure `index.html` is at the published root, not nested inside an extra folder.
+Then visit <http://localhost:8000>. Alternatively use any static HTTP server. All assets are relative; no build step or JavaScript dependency is required. The optional Google Fonts import falls back to system fonts if unavailable.
 
-### Git-based deployment
-1. Push these files to a GitHub, GitLab, or Bitbucket repository.
-2. In Netlify choose **Add new site → Import an existing project** and select the repository.
-3. Leave the build command blank and set the publish directory to the repository root (`.`).
-4. Deploy. There is no server-side configuration required.
+## Deploy
 
-## GitHub Pages
-Commit the files to a repository, then enable Pages for the chosen branch and root folder. The app is static and needs no build workflow.
+Upload the contents of this directory to any static host (for example GitHub Pages, Netlify, or an object-storage website endpoint) and serve over HTTPS. Keep the five files together at the site root. The manifest provides app metadata; an offline service worker and app icons are intentionally not included, so this is a static PWA-ready package rather than an offline-caching implementation.
 
-## Using the atlas
-- Choose one of the eight domain filters or search across node labels, IDs, and domains.
-- Select a node to highlight its connected lineage and mappings; select it again or press **Reset** to clear.
-- Toggle **Bubble Matrix** to compare the four 1–10 influence dimensions at each node.
-- Drag a Tier 4 achievement onto the top drop bar to open its cinematic impact profile. Click outside the bubbles or press Escape to return.
-- Press **⌘/Ctrl + K** to focus search.
+## Interaction
 
-## Data note
-The supplied `data.json` is retained as the source dataset. Its editorial notice states that scores and relationships are illustrative, provisional estimates—not verified benchmarks or measured performance. Edit the JSON directly to tailor the atlas; keep IDs unique and mapping references consistent. The visual scale is proportional to the provided ordinal scores.
+Select or drag a Tier 4 card into the top Impact lens. On touch devices, drag a card into the same target; tapping a Tier 4 card is an accessible alternative. The matrix averages each mapped concept's ordinal 1–10 influence values across Performance, Reliability, Scalability, and Security. Search filters cards as you type (`/` focuses search, `Esc` clears or closes). “Reset view” clears the selection and query; × closes the current impact view.
+
+## Data notes
+
+The included editorial seed dataset is illustrative and provisional, not verified benchmarks or factual ratings. Influence values are ordinal estimates on a 1–10 scale. Customize `data.json` to fit your context while preserving its `domains`, `tiers`, `mappings`, and `impactDimensions` structure. If data cannot be fetched (including when opened via `file://`), the app reports the issue and remains safe to use with empty fallback data.
