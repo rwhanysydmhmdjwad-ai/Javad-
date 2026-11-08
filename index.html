@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#080d18">
+  <meta name="description" content="Explore an editable, provisional map of computer science concepts, constraints, goals, and achievements.">
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="ring.css">
+  <title>CS Knowledge Atlas</title>
+</head>
+<body>
+<div id="page">
+  <div class="ambient a1"></div><div class="ambient a2"></div>
+  <header class="topbar">
+    <a class="brand" href="#atlas" aria-label="Go to knowledge atlas"><span class="brand-mark">✳</span><span>CS <b>KNOWLEDGE ATLAS</b></span></a>
+    <div class="head-note">A map of ideas, from first principles to real-world impact</div>
+    <button id="matrixToggle" class="glass-btn" aria-pressed="false">▥ <span>Score bars</span></button>
+  </header>
+  <main>
+    <section class="intro">
+      <div><div class="eyebrow">COMPUTER SCIENCE · INTERACTIVE MAP</div><h1>Knowledge, <span>connected.</span></h1><p>Trace explicit paths from foundations to achievements, then explore their impact.</p></div>
+      <div class="stats"><div><strong id="nodeCount">—</strong><small>KNOWLEDGE NODES</small></div><div><strong>04</strong><small>ARCHITECTURAL TIERS</small></div></div>
+    </section>
+    <section class="toolbar" aria-label="Atlas filters">
+      <div id="domains" class="domains" role="group" aria-label="Filter achievements by domain"></div>
+      <label class="search"><span aria-hidden="true">⌕</span><input id="search" type="search" aria-label="Search achievements" placeholder="Search achievements…" autocomplete="off"><kbd>⌘ K</kbd></label>
+      <button id="clear" class="clear-btn">Reset</button>
+    </section>
+    <p class="filter-help">Eight domains · Domain and search filters affect Tier 4 only. The active achievement stays visible in search.</p>
+    <div class="selection-toolbar">
+      <div id="selectionInfo" class="selection-info" role="status">Loading the atlas…</div>
+      <button id="explore" class="glass-btn" disabled>Explore achievement ↗</button>
+    </div>
+    <p class="interaction-help">Select a lower node, then a highlighted achievement. White outline = original source. Hold and drag an achievement or its ⠿ handle into the glass bar, or use Explore achievement. On touch screens, scroll from the spaces between cards.</p>
+    <section class="atlas" id="atlas" aria-label="Four-tier knowledge graph">
+      <div class="tier tier4"><div class="tier-head"><span class="tier-no">04</span><div><h2>Real-World Achievements</h2><p>What we build and deliver</p></div><span class="tier-tag">OUTCOMES</span></div><div class="node-grid" id="tier4"></div><p id="achievementEmpty" class="hidden tier-empty">No achievements match this domain and search.</p></div>
+      <div class="partition"><span>CAPABILITIES EMERGE FROM INTENT</span></div>
+      <div class="tier tier3"><div class="tier-head"><span class="tier-no">03</span><div><h2>Abstract Goals</h2><p>Qualities systems aim to achieve</p></div><span class="tier-tag">INTENT</span></div><div class="node-grid" id="tier3"></div></div>
+      <div class="partition"><span>TRADE-OFFS SHAPE THE DESIGN SPACE</span></div>
+      <div class="foundation">
+        <div class="tier tier1"><div class="tier-head"><span class="tier-no">01</span><div><h2>Concepts &amp; Tools</h2><p>Ideas, methods, and building blocks</p></div><span class="tier-tag">FOUNDATIONS</span></div><div class="node-grid" id="tier1"></div></div>
+        <div class="glass-divider"><span>DESIGN<br>SPACE</span></div>
+        <div class="tier tier2"><div class="tier-head"><span class="tier-no">02</span><div><h2>Constraints &amp; Bounds</h2><p>Limits, risks, and operating conditions</p></div><span class="tier-tag">BOUNDARIES</span></div><div class="node-grid" id="tier2"></div></div>
+      </div>
+      <svg id="links" aria-hidden="true"></svg>
+      <div id="empty" class="empty hidden">No nodes match this search.</div>
+    </section>
+    <details class="explanation" id="pathDetails"><summary>Recorded relationships <span id="pathCount"></span></summary><p>Solid paths are explicit mappings: achievement → goal → concept or constraint. Parent labels describe the separate within-tier hierarchy; they do not imply inherited impact.</p><div id="pathList">Select an achievement to see its recorded path.</div></details>
+    <details class="explanation"><summary>About this provisional map &amp; bubble sizes</summary><p id="editorialNotice"></p><p>Bubble view includes each distinct node on the selected achievement's explicit path, excluding the achievement itself. It does not invent missing links, propagate impact through parent/child categories, or treat shared nodes as multiple observations.</p><p>Choose Performance, Reliability, Scalability, Security, or their equal-weight mean. Circle area is proportional to the chosen 1–10 score: radius = 14 × √score in diagram units (14–44.27). The same scale is used for all nodes. Missing or out-of-range scores use a hollow, unscaled marker. The central glass disc is decorative and is not a scored circle.</p><p>These ordinal, provisional ratings are not measurements: twice the displayed area does not establish twice the real-world impact. Color and ring placement are decorative, not extra scores. Scores belong to nodes, not to achievement-specific effects. Diagram fitting changes the screen scale, not within-diagram area ratios.</p><p id="dataWarnings"></p></details>
+    <footer><span>CS KNOWLEDGE ATLAS <i>·</i> An open, editable map</span><span>Illustrative influence scores · Not measured benchmarks</span></footer>
+  </main>
+</div>
+<button id="dropbar" class="dropbar" tabindex="-1" aria-label="Open bubble view for the selected achievement"><span aria-hidden="true">↓</span><span class="drop-label">DROP AN ACHIEVEMENT HERE</span></button>
+<div id="cinema" class="cinema" role="dialog" aria-modal="true" aria-labelledby="cinemaTitle" aria-describedby="cinemaHelp" aria-hidden="true" inert>
+  <div class="cinema-backdrop"></div>
+  <div class="cinema-content">
+    <div class="cinema-header" data-keep-open><div><span class="cinema-kicker">ATLAS · CONNECTED IMPACT</span><h2 id="cinemaTitle"></h2></div><button id="closeCinema" class="glass-btn" aria-label="Close bubble view">Close ×</button></div>
+    <div class="bubble-controls" data-keep-open><label for="impactMode">Size by</label><select id="impactMode"><option value="balanced">Equal-weight mean</option><option value="performance">Performance</option><option value="reliability">Reliability</option><option value="scalability">Scalability</option><option value="security">Security</option></select><label class="zoom-control"><input type="checkbox" id="bubbleZoom"> Larger diagram</label></div>
+    <p id="cinemaHelp" data-keep-open>Circle area = provisional score. Tap a numbered bubble or its list entry for details. Click empty space, press Escape, or use Close to return.</p>
+    <div class="bubble-layout">
+      <div class="ring-scroll" id="ringScroll"><svg id="ringSvg" role="group" aria-label="Related knowledge nodes arranged in concentric rings"></svg></div>
+      <aside class="bubble-sidebar" data-keep-open><div id="bubbleDetails" class="bubble-details" role="status"></div><h3 id="bubbleListTitle">Related nodes</h3><ol id="bubbleList" class="bubble-list" aria-labelledby="bubbleListTitle"></ol></aside>
+    </div>
+  </div>
+</div>
+<noscript><p class="no-script">This atlas needs JavaScript to load its editable data.</p></noscript>
+<script src="core.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
