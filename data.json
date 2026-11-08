@@ -1345,36 +1345,33 @@
         "cache",
         "amdahl",
         "algorithms-core",
-        "transport"
+        "latency"
       ],
       "responsive": [
         "eventloop",
-        "syntax",
-        "runtime"
+        "syntax"
       ],
       "efficient": [
         "cache",
         "memory",
         "parallel",
-        "complexity",
-        "amdahl"
+        "memorybound"
       ],
       "correct": [
         "logic",
-        "discrete",
         "compiler",
-        "transactions"
+        "transactions",
+        "consistency"
       ],
       "safe": [
         "stackheap",
         "gc",
-        "compiler",
-        "runtime"
+        "security"
       ],
       "consistent": [
         "transactions",
         "consensus",
-        "storage"
+        "idempotency"
       ],
       "scale": [
         "trees",
@@ -1385,56 +1382,47 @@
       "throughput": [
         "parallel",
         "streaming",
-        "cache",
-        "algorithms-core"
+        "cache"
       ],
       "elastic": [
         "orchestration",
-        "containers",
-        "architecture"
+        "containers"
       ],
       "available": [
         "consensus",
-        "protocols",
-        "os"
+        "fault",
+        "availability"
       ],
       "recover": [
-        "os",
-        "consensus",
-        "transactions",
-        "storage"
+        "mutex",
+        "idempotency",
+        "fault"
       ],
       "durable": [
         "storage",
-        "transactions",
-        "indexing"
+        "transactions"
       ],
       "secure-goal": [
         "protocols",
-        "os",
-        "runtime",
-        "compiler"
+        "auth",
+        "threat"
       ],
       "leastpriv": [
-        "protocols",
-        "os",
-        "compiler"
+        "security",
+        "auth"
       ],
       "integrity": [
         "transactions",
-        "compiler",
-        "logic"
+        "privacy"
       ],
       "maintain": [
         "syntax",
         "git",
-        "os",
-        "compiler"
+        "operability"
       ],
       "observable": [
         "os",
-        "orchestration",
-        "eventloop"
+        "orchestration"
       ]
     },
     "goalToTier2": {
@@ -1443,14 +1431,12 @@
         "memorybound"
       ],
       "responsive": [
-        "latency",
+        "cost",
         "operability"
       ],
       "efficient": [
         "energy",
-        "cost",
-        "complexity-bound",
-        "memorybound"
+        "complexity-bound"
       ],
       "correct": [
         "failure",
@@ -1462,8 +1448,7 @@
       ],
       "consistent": [
         "partitions",
-        "failure",
-        "consistency"
+        "failure"
       ],
       "scale": [
         "cost",
@@ -1472,13 +1457,11 @@
       ],
       "throughput": [
         "backpressure",
-        "latency",
-        "memorybound"
+        "latency"
       ],
       "elastic": [
         "cost",
-        "operability",
-        "failure"
+        "operability"
       ],
       "available": [
         "failure",
@@ -1487,37 +1470,31 @@
       ],
       "recover": [
         "fault",
-        "idempotency",
-        "failure"
+        "idempotency"
       ],
       "durable": [
         "failure",
-        "consistency",
-        "cost"
+        "consistency"
       ],
       "secure-goal": [
         "security",
-        "privacy",
-        "threat"
+        "privacy"
       ],
       "leastpriv": [
         "security",
-        "privacy"
+        "auth"
       ],
       "integrity": [
         "security",
-        "failure",
-        "consistency"
+        "failure"
       ],
       "maintain": [
         "operability",
-        "cost",
-        "complexity-bound"
+        "cost"
       ],
       "observable": [
         "operability",
-        "privacy",
-        "cost"
+        "security"
       ]
     },
     "achievementToGoals": {
@@ -1542,33 +1519,28 @@
         "secure-goal"
       ],
       "cloud": [
-        "scale",
-        "elastic",
-        "available",
-        "secure-goal",
+        "fast",
+        "correct",
         "maintain"
       ],
       "edge": [
-        "responsive",
-        "efficient",
-        "available",
-        "secure-goal"
+        "fast",
+        "correct",
+        "maintain"
       ],
       "data-products": [
-        "scale",
+        "fast",
         "correct",
-        "secure-goal",
         "maintain"
       ],
       "analytics": [
-        "throughput",
+        "fast",
         "correct",
         "maintain"
       ],
       "ai-products": [
-        "efficient",
+        "fast",
         "correct",
-        "secure-goal",
         "maintain"
       ],
       "trusted": [
@@ -1577,31 +1549,27 @@
         "correct"
       ],
       "financial": [
+        "fast",
         "correct",
-        "consistent",
-        "available",
-        "secure-goal"
+        "maintain"
       ],
       "public": [
-        "available",
-        "secure-goal",
+        "fast",
         "correct",
         "maintain"
       ],
       "collab": [
-        "responsive",
+        "maintain",
+        "fast"
+      ],
+      "devtools": [
+        "fast",
         "correct",
         "maintain"
       ],
-      "devtools": [
-        "maintain",
-        "correct",
-        "observable"
-      ],
       "science": [
-        "efficient",
+        "fast",
         "correct",
-        "throughput",
         "maintain"
       ]
     }
