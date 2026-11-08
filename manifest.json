@@ -1,11 +1,10 @@
 {
   "name": "CS Knowledge Atlas",
-  "short_name": "CS Atlas",
-  "description": "Explore how computer-science foundations connect to real-world systems.",
-  "start_url": "./index.html",
-  "scope": "./",
+  "short_name": "Knowledge Atlas",
+  "description": "An interactive map of computer science knowledge.",
+  "start_url": ".",
   "display": "standalone",
-  "orientation": "any",
-  "background_color": "#080c18",
-  "theme_color": "#080c18"
+  "background_color": "#080d18",
+  "theme_color": "#080d18",
+  "icons": []
 }
