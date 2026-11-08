@@ -1,0 +1,1205 @@
+{
+  "schemaVersion": 2,
+  "editorialNotice": "Curated illustrative dependency map, not a complete or formally proven model. Links mean a plausible engineering dependency, not a direct graph edge from Tier 4 to Tier 1/2. Impact scores are ordinal editorial estimates (1–10), not benchmarks.",
+  "domains": [
+    {
+      "id": "theory",
+      "label": "Theory & Foundations"
+    },
+    {
+      "id": "architecture",
+      "label": "Computer Architecture & Hardware"
+    },
+    {
+      "id": "systems",
+      "label": "Systems & Operating Systems"
+    },
+    {
+      "id": "software",
+      "label": "Software Engineering"
+    },
+    {
+      "id": "devops",
+      "label": "DevOps & Toolchain"
+    },
+    {
+      "id": "data",
+      "label": "Data Systems & Databases"
+    },
+    {
+      "id": "ai",
+      "label": "AI / Machine Learning"
+    },
+    {
+      "id": "security",
+      "label": "Security & Cryptography"
+    }
+  ],
+  "tiers": {
+    "tier1": [
+      {
+        "id": "graphs",
+        "label": "Graph theory",
+        "domains": [
+          "theory"
+        ],
+        "description": "Models relationships, routes, dependencies, and networks.",
+        "influences": {
+          "performance": 7,
+          "reliability": 7,
+          "scalability": 8,
+          "security": 4
+        }
+      },
+      {
+        "id": "logic",
+        "label": "Boolean logic & proof",
+        "domains": [
+          "theory"
+        ],
+        "description": "Formal reasoning for correctness, invariants, and verification.",
+        "influences": {
+          "performance": 3,
+          "reliability": 9,
+          "scalability": 3,
+          "security": 7
+        }
+      },
+      {
+        "id": "complexity",
+        "label": "Algorithm design & complexity",
+        "domains": [
+          "theory"
+        ],
+        "description": "Choose algorithms with suitable time/space costs and analyze limits.",
+        "influences": {
+          "performance": 9,
+          "reliability": 5,
+          "scalability": 8,
+          "security": 3
+        }
+      },
+      {
+        "id": "probability",
+        "label": "Probability & statistics",
+        "domains": [
+          "theory",
+          "ai"
+        ],
+        "description": "Reason about uncertainty, sampling, and model behavior.",
+        "influences": {
+          "performance": 5,
+          "reliability": 6,
+          "scalability": 6,
+          "security": 4
+        }
+      },
+      {
+        "id": "trees",
+        "label": "Trees, indexes & B-trees",
+        "domains": [
+          "theory",
+          "data"
+        ],
+        "description": "Hierarchical search structures used in filesystems and databases.",
+        "influences": {
+          "performance": 8,
+          "reliability": 7,
+          "scalability": 8,
+          "security": 3
+        }
+      },
+      {
+        "id": "hash",
+        "label": "Hash tables & hashing",
+        "domains": [
+          "theory",
+          "data",
+          "security"
+        ],
+        "description": "Fast key lookup and cryptographic hash primitives (distinct uses).",
+        "influences": {
+          "performance": 8,
+          "reliability": 6,
+          "scalability": 7,
+          "security": 8
+        }
+      },
+      {
+        "id": "parallel",
+        "label": "Parallel algorithms",
+        "domains": [
+          "theory",
+          "architecture"
+        ],
+        "description": "Partition work while managing contention and coordination.",
+        "influences": {
+          "performance": 9,
+          "reliability": 5,
+          "scalability": 9,
+          "security": 2
+        }
+      },
+      {
+        "id": "memory",
+        "label": "Memory hierarchy & locality",
+        "domains": [
+          "architecture"
+        ],
+        "description": "Caches, RAM, storage, and locality shape system performance.",
+        "influences": {
+          "performance": 9,
+          "reliability": 6,
+          "scalability": 6,
+          "security": 4
+        }
+      },
+      {
+        "id": "os",
+        "label": "Operating systems & processes",
+        "domains": [
+          "systems"
+        ],
+        "description": "Processes, scheduling, files, isolation, and system calls.",
+        "influences": {
+          "performance": 7,
+          "reliability": 8,
+          "scalability": 7,
+          "security": 7
+        }
+      },
+      {
+        "id": "runtime",
+        "label": "Runtime & memory management",
+        "domains": [
+          "software",
+          "systems"
+        ],
+        "description": "Allocation, garbage collection, and execution environments.",
+        "influences": {
+          "performance": 7,
+          "reliability": 7,
+          "scalability": 6,
+          "security": 6
+        }
+      },
+      {
+        "id": "concurrency",
+        "label": "Concurrency primitives",
+        "domains": [
+          "systems",
+          "software"
+        ],
+        "description": "Locks, atomics, queues, and event loops coordinate execution.",
+        "influences": {
+          "performance": 8,
+          "reliability": 7,
+          "scalability": 8,
+          "security": 4
+        }
+      },
+      {
+        "id": "distributed",
+        "label": "Distributed algorithms & consensus",
+        "domains": [
+          "theory",
+          "systems"
+        ],
+        "description": "Replication, leader election, ordering, and consensus across machines.",
+        "influences": {
+          "performance": 6,
+          "reliability": 9,
+          "scalability": 8,
+          "security": 6
+        }
+      },
+      {
+        "id": "network",
+        "label": "TCP/IP, HTTP & networking",
+        "domains": [
+          "systems",
+          "devops"
+        ],
+        "description": "Transport, routing, protocols, and service communication.",
+        "influences": {
+          "performance": 7,
+          "reliability": 8,
+          "scalability": 8,
+          "security": 7
+        }
+      },
+      {
+        "id": "storage",
+        "label": "Storage engines & log structures",
+        "domains": [
+          "data",
+          "systems"
+        ],
+        "description": "Write-ahead logs, LSM trees, pages, and durable storage.",
+        "influences": {
+          "performance": 8,
+          "reliability": 9,
+          "scalability": 8,
+          "security": 5
+        }
+      },
+      {
+        "id": "transactions",
+        "label": "Transactions & query planning",
+        "domains": [
+          "data"
+        ],
+        "description": "ACID semantics, indexes, isolation, and query execution.",
+        "influences": {
+          "performance": 7,
+          "reliability": 9,
+          "scalability": 6,
+          "security": 5
+        }
+      },
+      {
+        "id": "crypto",
+        "label": "Cryptography & key management",
+        "domains": [
+          "security",
+          "theory"
+        ],
+        "description": "Encryption, signatures, key exchange, and secure key lifecycle.",
+        "influences": {
+          "performance": 4,
+          "reliability": 8,
+          "scalability": 5,
+          "security": 10
+        }
+      },
+      {
+        "id": "compiler",
+        "label": "Compilers, ASTs & code generation",
+        "domains": [
+          "software"
+        ],
+        "description": "Translate source languages into optimized executable forms.",
+        "influences": {
+          "performance": 8,
+          "reliability": 7,
+          "scalability": 5,
+          "security": 5
+        }
+      },
+      {
+        "id": "containers",
+        "label": "Containers & orchestration primitives",
+        "domains": [
+          "devops",
+          "systems"
+        ],
+        "description": "Namespaces, images, scheduling, service discovery, and deployment.",
+        "influences": {
+          "performance": 6,
+          "reliability": 8,
+          "scalability": 9,
+          "security": 7
+        }
+      },
+      {
+        "id": "ml",
+        "label": "Machine learning & representation",
+        "domains": [
+          "ai",
+          "theory"
+        ],
+        "description": "Training, inference, embeddings, and evaluation of learned models.",
+        "influences": {
+          "performance": 7,
+          "reliability": 6,
+          "scalability": 8,
+          "security": 5
+        }
+      },
+      {
+        "id": "stream",
+        "label": "Streams, queues & backpressure",
+        "domains": [
+          "data",
+          "systems"
+        ],
+        "description": "Process unbounded data while controlling overload and buffering.",
+        "influences": {
+          "performance": 8,
+          "reliability": 8,
+          "scalability": 9,
+          "security": 4
+        }
+      },
+      {
+        "id": "testing",
+        "label": "Testing, version control & CI",
+        "domains": [
+          "software",
+          "devops"
+        ],
+        "description": "Automated verification and reproducible change delivery.",
+        "influences": {
+          "performance": 5,
+          "reliability": 9,
+          "scalability": 6,
+          "security": 6
+        }
+      },
+      {
+        "id": "identity",
+        "label": "Identity, authorization & threat modeling",
+        "domains": [
+          "security",
+          "software"
+        ],
+        "description": "Define principals, permissions, trust boundaries, and threats.",
+        "influences": {
+          "performance": 4,
+          "reliability": 8,
+          "scalability": 5,
+          "security": 10
+        }
+      }
+    ],
+    "tier2": [
+      {
+        "id": "latency",
+        "label": "Propagation delay & latency budgets",
+        "domains": [
+          "architecture",
+          "systems"
+        ],
+        "description": "Speed-of-light limits, queueing, and end-to-end response budgets.",
+        "influences": {
+          "performance": 9,
+          "reliability": 5,
+          "scalability": 5,
+          "security": 2
+        }
+      },
+      {
+        "id": "memorywall",
+        "label": "Memory wall & finite resources",
+        "domains": [
+          "architecture"
+        ],
+        "description": "Memory bandwidth, cache misses, energy, and hardware capacity.",
+        "influences": {
+          "performance": 9,
+          "reliability": 5,
+          "scalability": 5,
+          "security": 3
+        }
+      },
+      {
+        "id": "cap",
+        "label": "CAP / partition trade-offs",
+        "domains": [
+          "theory",
+          "data"
+        ],
+        "description": "During partitions, consistency and availability cannot both be fully guaranteed.",
+        "influences": {
+          "performance": 3,
+          "reliability": 9,
+          "scalability": 8,
+          "security": 2
+        }
+      },
+      {
+        "id": "flp",
+        "label": "FLP & coordination limits",
+        "domains": [
+          "theory",
+          "systems"
+        ],
+        "description": "Deterministic consensus cannot guarantee termination in fully asynchronous systems with failures.",
+        "influences": {
+          "performance": 2,
+          "reliability": 9,
+          "scalability": 6,
+          "security": 2
+        }
+      },
+      {
+        "id": "complexity-bound",
+        "label": "Time/space trade-offs",
+        "domains": [
+          "theory"
+        ],
+        "description": "Finite compute and memory force algorithmic trade-offs.",
+        "influences": {
+          "performance": 8,
+          "reliability": 4,
+          "scalability": 7,
+          "security": 2
+        }
+      },
+      {
+        "id": "consistency",
+        "label": "Consistency vs availability choices",
+        "domains": [
+          "data",
+          "systems"
+        ],
+        "description": "Replication semantics trade freshness against availability and latency.",
+        "influences": {
+          "performance": 4,
+          "reliability": 9,
+          "scalability": 8,
+          "security": 2
+        }
+      },
+      {
+        "id": "faults",
+        "label": "Crashes, partitions & partial failure",
+        "domains": [
+          "systems",
+          "devops"
+        ],
+        "description": "Components fail independently; timeouts do not prove a remote failure.",
+        "influences": {
+          "performance": 3,
+          "reliability": 10,
+          "scalability": 7,
+          "security": 3
+        }
+      },
+      {
+        "id": "contention",
+        "label": "Races, deadlocks & contention",
+        "domains": [
+          "systems",
+          "software"
+        ],
+        "description": "Concurrency introduces ordering, starvation, and synchronization hazards.",
+        "influences": {
+          "performance": 6,
+          "reliability": 9,
+          "scalability": 7,
+          "security": 4
+        }
+      },
+      {
+        "id": "backpressure",
+        "label": "Overload & backpressure",
+        "domains": [
+          "systems",
+          "data"
+        ],
+        "description": "Queues grow without bounds unless producers and consumers are coordinated.",
+        "influences": {
+          "performance": 7,
+          "reliability": 9,
+          "scalability": 9,
+          "security": 2
+        }
+      },
+      {
+        "id": "durability",
+        "label": "Durability & storage failure",
+        "domains": [
+          "data",
+          "systems"
+        ],
+        "description": "Power loss, media faults, corruption, and recovery constrain persistence.",
+        "influences": {
+          "performance": 4,
+          "reliability": 10,
+          "scalability": 5,
+          "security": 4
+        }
+      },
+      {
+        "id": "security-boundary",
+        "label": "Memory safety & attack surface",
+        "domains": [
+          "security",
+          "software"
+        ],
+        "description": "Bugs, injection, supply-chain compromise, and side channels are persistent risks.",
+        "influences": {
+          "performance": 3,
+          "reliability": 8,
+          "scalability": 3,
+          "security": 10
+        }
+      },
+      {
+        "id": "privacy",
+        "label": "Privacy, data minimization & compliance",
+        "domains": [
+          "security",
+          "data"
+        ],
+        "description": "Data collection and retention must be bounded and appropriately protected.",
+        "influences": {
+          "performance": 2,
+          "reliability": 6,
+          "scalability": 3,
+          "security": 9
+        }
+      }
+    ],
+    "tier3": [
+      {
+        "id": "performance-goal",
+        "label": "High performance",
+        "domains": [
+          "architecture",
+          "systems"
+        ],
+        "description": "Use compute and memory efficiently to meet workload targets.",
+        "influences": {
+          "performance": 10,
+          "reliability": 4,
+          "scalability": 6,
+          "security": 2
+        }
+      },
+      {
+        "id": "low-latency",
+        "label": "Low latency",
+        "domains": [
+          "systems",
+          "networking"
+        ],
+        "description": "Keep response time predictable under realistic load.",
+        "influences": {
+          "performance": 9,
+          "reliability": 5,
+          "scalability": 5,
+          "security": 2
+        }
+      },
+      {
+        "id": "throughput",
+        "label": "High throughput",
+        "domains": [
+          "systems",
+          "data"
+        ],
+        "description": "Process a large volume of work per unit time.",
+        "influences": {
+          "performance": 9,
+          "reliability": 5,
+          "scalability": 8,
+          "security": 2
+        }
+      },
+      {
+        "id": "correctness",
+        "label": "Correctness & determinism",
+        "domains": [
+          "theory",
+          "software"
+        ],
+        "description": "Produce valid behavior and preserve invariants.",
+        "influences": {
+          "performance": 3,
+          "reliability": 10,
+          "scalability": 4,
+          "security": 5
+        }
+      },
+      {
+        "id": "durable-goal",
+        "label": "Durability & data integrity",
+        "domains": [
+          "data",
+          "systems"
+        ],
+        "description": "Retain correct data across failures and recovery.",
+        "influences": {
+          "performance": 4,
+          "reliability": 10,
+          "scalability": 6,
+          "security": 6
+        }
+      },
+      {
+        "id": "availability",
+        "label": "High availability & recovery",
+        "domains": [
+          "systems",
+          "devops"
+        ],
+        "description": "Continue service despite component failures.",
+        "influences": {
+          "performance": 4,
+          "reliability": 10,
+          "scalability": 8,
+          "security": 4
+        }
+      },
+      {
+        "id": "scale-goal",
+        "label": "Scalability",
+        "domains": [
+          "systems",
+          "data"
+        ],
+        "description": "Handle growth in users, data, and workload.",
+        "influences": {
+          "performance": 6,
+          "reliability": 7,
+          "scalability": 10,
+          "security": 3
+        }
+      },
+      {
+        "id": "secure-goal",
+        "label": "Confidentiality & zero trust",
+        "domains": [
+          "security"
+        ],
+        "description": "Limit access, protect secrets, and reduce blast radius.",
+        "influences": {
+          "performance": 2,
+          "reliability": 8,
+          "scalability": 5,
+          "security": 10
+        }
+      },
+      {
+        "id": "maintainability",
+        "label": "Maintainability & evolvability",
+        "domains": [
+          "software",
+          "devops"
+        ],
+        "description": "Make change understandable, reviewable, and testable.",
+        "influences": {
+          "performance": 3,
+          "reliability": 8,
+          "scalability": 6,
+          "security": 6
+        }
+      },
+      {
+        "id": "elasticity",
+        "label": "Elastic resource efficiency",
+        "domains": [
+          "devops",
+          "systems"
+        ],
+        "description": "Adapt resources to demand while controlling cost.",
+        "influences": {
+          "performance": 7,
+          "reliability": 7,
+          "scalability": 9,
+          "security": 3
+        }
+      },
+      {
+        "id": "observability",
+        "label": "Observability",
+        "domains": [
+          "devops",
+          "systems"
+        ],
+        "description": "Use logs, metrics, traces, and alerts to understand operation.",
+        "influences": {
+          "performance": 4,
+          "reliability": 9,
+          "scalability": 7,
+          "security": 5
+        }
+      },
+      {
+        "id": "composability",
+        "label": "Composability & interoperability",
+        "domains": [
+          "software",
+          "systems"
+        ],
+        "description": "Combine independent components through stable interfaces.",
+        "influences": {
+          "performance": 4,
+          "reliability": 7,
+          "scalability": 8,
+          "security": 4
+        }
+      }
+    ],
+    "tier4": [
+      {
+        "id": "linux",
+        "label": "Linux operating system",
+        "domains": [
+          "systems",
+          "devops"
+        ],
+        "description": "A widely deployed kernel and operating-system ecosystem.",
+        "influences": {
+          "performance": 8,
+          "reliability": 9,
+          "scalability": 8,
+          "security": 8
+        }
+      },
+      {
+        "id": "postgres",
+        "label": "PostgreSQL database",
+        "domains": [
+          "data",
+          "systems"
+        ],
+        "description": "Relational database with transactions, indexing, replication, and extensions.",
+        "influences": {
+          "performance": 7,
+          "reliability": 10,
+          "scalability": 7,
+          "security": 8
+        }
+      },
+      {
+        "id": "redis",
+        "label": "Redis in-memory data platform",
+        "domains": [
+          "data",
+          "systems"
+        ],
+        "description": "In-memory data structures used for caching, queues, and coordination.",
+        "influences": {
+          "performance": 10,
+          "reliability": 7,
+          "scalability": 8,
+          "security": 6
+        }
+      },
+      {
+        "id": "kafka",
+        "label": "Apache Kafka event streaming",
+        "domains": [
+          "data",
+          "systems",
+          "devops"
+        ],
+        "description": "Distributed append-only event log and streaming platform.",
+        "influences": {
+          "performance": 9,
+          "reliability": 9,
+          "scalability": 10,
+          "security": 6
+        }
+      },
+      {
+        "id": "kubernetes",
+        "label": "Docker & Kubernetes platforms",
+        "domains": [
+          "devops",
+          "systems"
+        ],
+        "description": "Containerized packaging and orchestration of distributed workloads.",
+        "influences": {
+          "performance": 6,
+          "reliability": 9,
+          "scalability": 10,
+          "security": 7
+        }
+      },
+      {
+        "id": "git",
+        "label": "Git & CI/CD toolchains",
+        "domains": [
+          "devops",
+          "software"
+        ],
+        "description": "Versioned collaboration, automated tests, and deployment pipelines.",
+        "influences": {
+          "performance": 5,
+          "reliability": 9,
+          "scalability": 7,
+          "security": 7
+        }
+      },
+      {
+        "id": "reactv8",
+        "label": "React applications & V8 runtime",
+        "domains": [
+          "software",
+          "systems"
+        ],
+        "description": "Interactive web applications powered by compilers and managed runtimes.",
+        "influences": {
+          "performance": 8,
+          "reliability": 7,
+          "scalability": 7,
+          "security": 6
+        }
+      },
+      {
+        "id": "spark",
+        "label": "Apache Spark & large-scale analytics",
+        "domains": [
+          "data",
+          "systems"
+        ],
+        "description": "Distributed batch and streaming computation over large datasets.",
+        "influences": {
+          "performance": 8,
+          "reliability": 8,
+          "scalability": 10,
+          "security": 5
+        }
+      },
+      {
+        "id": "mlstack",
+        "label": "Deep-learning frameworks & vector databases",
+        "domains": [
+          "ai",
+          "data"
+        ],
+        "description": "Model development, GPU execution, embedding retrieval, and vector search.",
+        "influences": {
+          "performance": 8,
+          "reliability": 6,
+          "scalability": 9,
+          "security": 5
+        }
+      },
+      {
+        "id": "llm",
+        "label": "LLM inference systems",
+        "domains": [
+          "ai",
+          "systems"
+        ],
+        "description": "Serve large models with batching, quantization, and accelerator scheduling.",
+        "influences": {
+          "performance": 9,
+          "reliability": 6,
+          "scalability": 9,
+          "security": 5
+        }
+      },
+      {
+        "id": "bitcoin",
+        "label": "Bitcoin & consensus networks",
+        "domains": [
+          "security",
+          "systems",
+          "theory"
+        ],
+        "description": "A public proof-of-work ledger with cryptographic verification and consensus.",
+        "influences": {
+          "performance": 2,
+          "reliability": 9,
+          "scalability": 5,
+          "security": 10
+        }
+      },
+      {
+        "id": "gateway",
+        "label": "Microservices & API gateways",
+        "domains": [
+          "systems",
+          "devops",
+          "networking"
+        ],
+        "description": "Networked services connected through routing, identity, and observability.",
+        "influences": {
+          "performance": 6,
+          "reliability": 9,
+          "scalability": 9,
+          "security": 8
+        }
+      },
+      {
+        "id": "webrtc",
+        "label": "WebRTC & real-time streaming",
+        "domains": [
+          "networking",
+          "systems"
+        ],
+        "description": "Low-latency peer communication and media transport.",
+        "influences": {
+          "performance": 9,
+          "reliability": 7,
+          "scalability": 7,
+          "security": 7
+        }
+      },
+      {
+        "id": "secureweb",
+        "label": "TLS-secured web services",
+        "domains": [
+          "security",
+          "networking",
+          "software"
+        ],
+        "description": "Internet-facing services protected with transport security and identity controls.",
+        "influences": {
+          "performance": 6,
+          "reliability": 8,
+          "scalability": 8,
+          "security": 10
+        }
+      }
+    ]
+  },
+  "mappings": {
+    "goalToTier1": {
+      "performance-goal": [
+        "complexity",
+        "parallel",
+        "memory",
+        "runtime",
+        "compiler",
+        "stream"
+      ],
+      "low-latency": [
+        "network",
+        "memory",
+        "concurrency",
+        "runtime"
+      ],
+      "throughput": [
+        "parallel",
+        "concurrency",
+        "stream",
+        "storage",
+        "hash"
+      ],
+      "correctness": [
+        "logic",
+        "complexity",
+        "transactions",
+        "testing",
+        "compiler"
+      ],
+      "durable-goal": [
+        "storage",
+        "transactions",
+        "distributed",
+        "hash"
+      ],
+      "availability": [
+        "distributed",
+        "os",
+        "containers",
+        "network",
+        "testing"
+      ],
+      "scale-goal": [
+        "graphs",
+        "distributed",
+        "containers",
+        "stream",
+        "hash"
+      ],
+      "secure-goal": [
+        "crypto",
+        "identity",
+        "os",
+        "hash"
+      ],
+      "maintainability": [
+        "testing",
+        "compiler",
+        "logic"
+      ],
+      "elasticity": [
+        "containers",
+        "os",
+        "stream"
+      ],
+      "observability": [
+        "os",
+        "network",
+        "testing"
+      ],
+      "composability": [
+        "network",
+        "compiler",
+        "containers",
+        "stream"
+      ]
+    },
+    "goalToTier2": {
+      "performance-goal": [
+        "memorywall",
+        "complexity-bound",
+        "contention"
+      ],
+      "low-latency": [
+        "latency",
+        "backpressure",
+        "memorywall"
+      ],
+      "throughput": [
+        "backpressure",
+        "contention",
+        "memorywall"
+      ],
+      "correctness": [
+        "contention",
+        "complexity-bound",
+        "faults"
+      ],
+      "durable-goal": [
+        "durability",
+        "faults",
+        "consistency"
+      ],
+      "availability": [
+        "faults",
+        "flp",
+        "cap",
+        "consistency"
+      ],
+      "scale-goal": [
+        "cap",
+        "backpressure",
+        "consistency"
+      ],
+      "secure-goal": [
+        "security-boundary",
+        "privacy"
+      ],
+      "maintainability": [
+        "complexity-bound",
+        "security-boundary"
+      ],
+      "elasticity": [
+        "backpressure",
+        "memorywall"
+      ],
+      "observability": [
+        "faults",
+        "privacy"
+      ],
+      "composability": [
+        "faults",
+        "security-boundary",
+        "consistency"
+      ]
+    },
+    "achievementToGoals": {
+      "linux": [
+        "performance-goal",
+        "correctness",
+        "availability",
+        "secure-goal",
+        "maintainability"
+      ],
+      "postgres": [
+        "correctness",
+        "durable-goal",
+        "availability",
+        "scale-goal",
+        "secure-goal",
+        "performance-goal"
+      ],
+      "redis": [
+        "low-latency",
+        "throughput",
+        "availability",
+        "scale-goal",
+        "correctness"
+      ],
+      "kafka": [
+        "throughput",
+        "durable-goal",
+        "availability",
+        "scale-goal",
+        "observability",
+        "secure-goal"
+      ],
+      "kubernetes": [
+        "availability",
+        "scale-goal",
+        "elasticity",
+        "observability",
+        "secure-goal",
+        "composability"
+      ],
+      "git": [
+        "correctness",
+        "maintainability",
+        "secure-goal",
+        "observability"
+      ],
+      "reactv8": [
+        "low-latency",
+        "performance-goal",
+        "correctness",
+        "maintainability",
+        "secure-goal"
+      ],
+      "spark": [
+        "throughput",
+        "scale-goal",
+        "performance-goal",
+        "availability",
+        "correctness"
+      ],
+      "mlstack": [
+        "performance-goal",
+        "scale-goal",
+        "correctness",
+        "secure-goal"
+      ],
+      "llm": [
+        "low-latency",
+        "throughput",
+        "scale-goal",
+        "performance-goal",
+        "secure-goal"
+      ],
+      "bitcoin": [
+        "correctness",
+        "durable-goal",
+        "secure-goal",
+        "availability",
+        "composability"
+      ],
+      "gateway": [
+        "low-latency",
+        "availability",
+        "scale-goal",
+        "secure-goal",
+        "observability",
+        "composability"
+      ],
+      "webrtc": [
+        "low-latency",
+        "throughput",
+        "availability",
+        "secure-goal",
+        "composability"
+      ],
+      "secureweb": [
+        "low-latency",
+        "availability",
+        "secure-goal",
+        "correctness",
+        "observability"
+      ]
+    }
+  },
+  "impactDimensions": [
+    {
+      "id": "performance",
+      "label": "Performance",
+      "color": "#5eead4"
+    },
+    {
+      "id": "reliability",
+      "label": "Reliability",
+      "color": "#a78bfa"
+    },
+    {
+      "id": "scalability",
+      "label": "Scalability",
+      "color": "#60a5fa"
+    },
+    {
+      "id": "security",
+      "label": "Security",
+      "color": "#fbbf24"
+    }
+  ]
+}
